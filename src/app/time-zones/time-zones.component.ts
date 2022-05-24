@@ -13,9 +13,10 @@ export class TimeZonesComponent implements OnChanges {
   @Input() city : string = "";
   @Input() continent : string = "";
   API = "https://worldtimeapi.org/api/timezone/"; 
-  value = '';
+  value = "";
 
-  ngOnChanges(): void {    
+  ngOnChanges(): void {  
+    this.value = "";
     this.city && this.getTime(`${this.API}${this.continent}/${this.city.split(' ').join('_')}`);
   }
 
